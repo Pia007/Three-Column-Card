@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap');
+
+/* Setting variables */
+:root {
+    
+    --primary-orange: hsl(31, 77%, 52%);
+    --primary-dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+    --trans-white: hsla(0, 0%, 100%, 0.75);
+    --very-light-gray: hsl(0, 0%, 95%);
+    --white: hsl(0, 0%, 100%);
+    --blue-at: hsl(228, 45%, 44%);
+    --black: hsla(0, 0%, 0%, 1);
+
+    --font-sm: 1rem;
+    --font-med: 1.1rem;
+    --font-xl: calc(var(--font-med) *3);
+    --font-lexa: 'Lexend Deca', sans-serif;
+    --font-bs: 'Big Shoulders Display', cursive;
+    --font-wt-norm: 400;
+    --font-wt-big: 700;
+    --corners: 0.8rem;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+ 
+/* Using psuedo-elements to applying border-box to all elements  */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: .625rem;
+    position: relative;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: var(--white);
+    font-weight: var(--font-wt-norm);
+    font-size: var(--font-med);
+    font-family: var(--font-lexa);
+    background-color: var(--very-light-gray);
+    
+}
+
+h2 {
+    font-weight: var(--font-wt-big);
+    font-size: var(--font-xl);
+    font-family: var(--font-bs);
+    color: var(--very-light-gray);
+    margin: 2.0rem 0;
+}
+
+main {
+    display: flex;
+    width: 70rem;   
+}
+
+/* Universally style all columns*/
+.info {
+    height: 100%;
+    width: 33.33%;
+    padding: 4rem;
+}
+.info img {
+    width: 5rem;
+}
+.info p {
+    line-height: 1.8;
+}
+.info button {
+    margin-top: 1.6rem;
+    padding: 1.2rem 2.8rem;
+    border-radius: calc(var(--corners)* 12);
+    border: 0.2 solid var(--trans-white);
+}
+
+
+
+/* Styling the column that is the 1st child of the parent element. Top-left and bottom-left corner radius.*/
+.info:nth-child(1) {
+    background-color: var(--primary-orange);
+    border-radius: var(--corners ) 0 0 var(--corners );
+}
+.info:nth-child(1) button {
+    color: var(--primary-orange);
+}
+
+/* Styling the column that is the 2nd child of the parent element. */
+.info:nth-child(2) {
+    background-color: var(--primary-dark-cyan);
+}
+.info:nth-child(2) button {
+    color: var(--primary-dark-cyan);
+}
+
+/* Styling the column that is the 3rd child of the parent element. Top-right and bottom-right corners.*/
+.info:nth-child(3) {
+    background-color: var(--very-dark-cyan);
+    border-radius: 0 var(--corners ) var(--corners ) 0;
+}
+.info:nth-child(3) button{
+    color: var(--very-dark-cyan);
+}
+
+.info button:hover {
+    transform: rotate(15deg);  
+}
+
+/* Frontend Mentor & Reskill Americans Credit */
+footer{
+    position: absolute;
+    bottom: 2.5rem;
+    height: 1.5rem;
+    background-color:hsla(0, 11%, 76%, 0.637);
+    width: 100%;
+}
+
+.attribution {
+    color: var(--black);
+    margin-top: 1em;
+    font-size: var(--font-med);
+    text-align: center;
+    letter-spacing: 1px;
+    margin: 0;
+}
+.attribution a {
+    color: var(--blue-at);
+}
+
+
+
+/* max height of 500px and minimum width 768px in (1em = 16px) responsive units*/
+@media (max-height: 31.25em) and (min-width: 48em) {
+    body {
+      height: 45rem;
+    }
+}
+
+/* max width 767 */
+@media (max-width: 47.9em) {
+    html,
+    body {
+        height: auto;
+        min-height: 100%;
+    }
+
+    body {
+        --font-med: 1.6rem;
+        display: block;
+    }
+    main {
+        width: 90%;
+        margin: 6rem auto;
+        flex-direction: column;
+        height: 100%;
+    }
+    .info {
+        width: 100%;
+        height: auto;
+    }
+    .info:nth-child(1) {
+        border-radius: var(--corners) var(--corners) 0 0;
+    }
+    .info:nth-child(3) {
+        border-radius: 0 0 var(--corners) var(--corners);
+    }
+    .info button {
+        margin-top: 2.75rem;
+    }
+    footer{
+        position: static;
+        bottom: 2.5rem;
+        height: 3.75rem;
+        width: 100%;
+    }
+}
+
+/* Styling for mobile devices max-width 375px */
+@media (max-width: 23.43em) {
+    html {
+        font-size: 2.5vw;
+    }
+}
+
