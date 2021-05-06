@@ -188,6 +188,9 @@ footer{
     .info button {
         margin-top: 2.75rem;
     }
+    .info button:hover {
+    transform: none;  
+    }
     footer{
         position: static;
         bottom: 2.5rem;
