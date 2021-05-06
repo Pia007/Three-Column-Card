@@ -86,6 +86,7 @@ main {
     line-height: 1.8;
 }
 .info button {
+    display: block;
     margin-top: 1.6rem;
     padding: 1.2rem 2.8rem;
     border-radius: calc(var(--corners)* 12);
